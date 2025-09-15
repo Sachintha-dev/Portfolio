@@ -1,7 +1,7 @@
 export function AboutSection() {
   return (
     <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-0">
         <div className="grid md:grid-cols-2 gap-20 items-start">
           <div className="text-left">
             <h2 className="text-6xl md:text-3xl font-bold text-black leading-tight">
@@ -12,7 +12,7 @@ export function AboutSection() {
           </div>
 
           <div className="text-right space-y-8 pt-8">
-            <p className="text-sm text-gray-500 leading-relaxed max-w-sm ml-auto">
+            <p className="text-md text-gray-500 leading-relaxed max-w-sm ml-auto">
               The fusion of my passion for design, development, and seamless
               user experiences places me at the intersection of creativity and
               technology in the digital world.
