@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { NavigationIcons } from "./navigation-icons";
 
 export function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -10,19 +9,19 @@ export function Hero() {
     // Start the animation after component mounts
     const timer = setTimeout(() => {
       setIsLoaded(true);
-    }, 5); // Small delay to ensure smooth start
+    }, 100); // Small delay to ensure smooth start
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <section
-      className="h-[75vh] w-full flex flex-col justify-between relative"
+      className="h-[68vh] w-full flex flex-col justify-between relative"
       style={{ backgroundColor: "#a2a5a6" }}
     >
       <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-sm text-white">© Code by Ashwin</div>
+        <div className="container mx-auto px-0 py-4 flex justify-between items-center">
+          <div className="text-sm text-white">© Code by Sachiya</div>
           <div className="text-sm text-white text-right max-w-md">
             Passionate Creative Designer and Developer, dedicated to crafting
             innovative solutions and exceptional digital experiences through
@@ -48,14 +47,11 @@ export function Hero() {
       </div>
 
       <div className="relative mt-auto flex flex-col items-center h-full justify-end">
-        <div className="absolute bottom-5 z-30 mb-8">
-          <NavigationIcons />
-        </div>
         {/* Portrait image at the very bottom */}
         <div className="relative z-10">
-          <div className="w-80 h-80 relative opacity-30">
+          <div className="w-120 h-120 relative opacity-95">
             <Image
-              src="/young-developer-portrait-black-and-white.jpg"
+              src="/profile.png"
               alt="Developer portrait"
               fill
               className="object-cover grayscale"

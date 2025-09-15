@@ -1,7 +1,7 @@
-import { Header } from "@/components/header"
-import { ProjectsShowcase } from "@/components/projects-showcase"
-import { Contact } from "@/components/contact"
-import { Footer } from "@/components/footer"
+import { Contact } from "@/components/contact";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
+import { ProjectsShowcase } from "@/components/projects-showcase";
 
 export default function ProjectsPage() {
   return (
@@ -13,5 +13,5 @@ export default function ProjectsPage() {
         <Footer />
       </div>
     </main>
-  )
+  );
 }

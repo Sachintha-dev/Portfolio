@@ -1,7 +1,7 @@
-import { Header } from "@/components/header"
-import { SkillsGrid } from "@/components/skills-grid"
-import { Contact } from "@/components/contact"
-import { Footer } from "@/components/footer"
+import { Contact } from "@/components/contact";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
+import { SkillsGrid } from "@/components/skills-grid";
 
 export default function Skills() {
   return (
@@ -14,5 +14,5 @@ export default function Skills() {
         <Footer />
       </div>
     </main>
-  )
+  );
 }
