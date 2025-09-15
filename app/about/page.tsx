@@ -1,13 +1,9 @@
-import { NavigationIcons } from "@/components/navigation-icons";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="flex items-center justify-between p-6">
-        <div className="text-2xl font-bold text-black">Ashwin</div>
-        <div className="w-12 h-12 bg-black rounded-full"></div>
-      </header>
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-6 py-12">
@@ -51,8 +47,13 @@ export default function AboutPage() {
             </div>
             <div className="bg-gray-100 rounded-2xl aspect-square flex items-center justify-center">
               <div className="text-gray-400 text-center">
-                <div className="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4"></div>
-                <p>Creative Process</p>
+                <Image
+                  src="/about-me.jpg"
+                  alt="Profile picture"
+                  width={300}
+                  height={300}
+                  className="field-sizing-fixed mx-auto mb-4 object-cover"
+                />
               </div>
             </div>
           </section>
@@ -125,11 +126,6 @@ export default function AboutPage() {
               </div>
             </div>
           </section>
-        </div>
-
-        {/* Navigation */}
-        <div className="flex justify-center mt-16">
-          <NavigationIcons />
         </div>
       </main>
     </div>

@@ -1,30 +1,29 @@
-import { AboutSection } from "@/components/about-section";
-import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
-import { Hero } from "@/components/hero";
-import { LeftSidebar } from "@/components/left-sidebar";
-import { ProjectsShowcase } from "@/components/projects-showcase";
-import { SkillsGrid } from "@/components/skills-grid";
+import AboutPage from "./about/page";
+import ContactPage from "./contact/page";
+import HomePageContent from "./home/page";
+import ProjectsPage from "./projects/page";
+import SkillsPage from "./skills/page";
 
 export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Fixed Left Sidebar */}
-      <LeftSidebar />
-
-      {/* Main Content with left margin to account for sidebar */}
+      {/* <LeftSidebar /> */}
       <main className="min-h-screen bg-gray-100">
-        <Hero />
+        <HomePageContent />
         <section id="about">
-          <AboutSection />
+          <AboutPage />
         </section>
         <section id="projects">
-          <ProjectsShowcase />
+          <ProjectsPage />
         </section>
         <section id="skills">
-          <SkillsGrid />
+          <SkillsPage />
         </section>
-        <Contact />
+        <section id="contact">
+          <ContactPage />
+        </section>
         <Footer />
       </main>
     </div>

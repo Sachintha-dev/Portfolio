@@ -29,11 +29,11 @@ export function ProjectsShowcase() {
   ];
 
   return (
-    <section className="py-20 px-6">
+    <section className="py-20 px-6 bg-white">
       <div className="container mx-auto max-w-6xl">
         <div className="mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-8">
-            welcome to my realm of wild projects and awesome creations
+          <h1 className="text-5xl font-bold text-black mb-8">
+            Welcome to my realm of wild projects and awesome creations
           </h1>
         </div>
 
@@ -42,7 +42,7 @@ export function ProjectsShowcase() {
             <div key={index} className="group cursor-pointer">
               <div className="relative overflow-hidden rounded-2xl mb-4">
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-80`}
+                  className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-70`}
                 />
                 <Image
                   src={project.image || "/placeholder.svg"}
@@ -53,10 +53,10 @@ export function ProjectsShowcase() {
                 />
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-6 h-6 border border-gray-400 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                <div className="w-6 h-6 border border-gray-300 rounded-full flex items-center justify-center mt-1 flex-shrink-0 bg-gray-100">
                   <span className="text-xs text-gray-700 font-medium">+</span>
                 </div>
-                <h3 className="text-lg font-medium text-gray-900">
+                <h3 className="text-lg font-medium text-black">
                   {project.title}
                 </h3>
               </div>

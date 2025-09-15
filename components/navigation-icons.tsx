@@ -9,22 +9,32 @@ interface NavigationIconsProps {
 }
 
 export function NavigationIcons({ isDark = false }: NavigationIconsProps) {
+  // Smooth scroll handler for anchor links
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+  };
   const pathname = usePathname();
 
   const navItems = [
-    { icon: Home, href: "/", label: "Home" },
-    { icon: User, href: "#about", label: "About" },
+    { icon: Home, href: "/#", label: "Home" },
+    { icon: User, href: "/#about", label: "About" },
     { icon: Target, href: "#projects", label: "Projects" },
     { icon: Star, href: "#skills", label: "Skills" },
-
-    // You can add more anchor links for other sections if needed
+    // You can add more page routes for other sections if needed
   ];
 
   return (
     <div className="flex flex-col items-center gap-1 bg-black/65 backdrop-blur-sm rounded-full px-2 py-4">
       {navItems.map((item) => {
         const Icon = item.icon;
-        // For anchor links, highlight if hash matches location.hash (optional)
         return (
           <div key={item.href} className="relative group">
             {item.href.startsWith("#") ? (
@@ -32,6 +42,7 @@ export function NavigationIcons({ isDark = false }: NavigationIconsProps) {
                 href={item.href}
                 className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-200 text-white/70 hover:text-white hover:bg-white/10`}
                 aria-label={item.label}
+                onClick={(e) => handleSmoothScroll(e, item.href)}
               >
                 <Icon size={20} />
               </a>
