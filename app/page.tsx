@@ -1,6 +1,7 @@
 import { Footer } from "@/components/footer";
 import AboutPage from "./about/page";
 import ContactPage from "./contact/page";
+import Education from "./education/education";
 import Experience from "./experience/experience";
 import HomePageContent from "./home/page";
 import ProjectsPage from "./projects/page";
@@ -18,6 +19,9 @@ export default function HomePage() {
         </section>
         <section id="experiences">
           <Experience />
+        </section>
+        <section id="education">
+          <Education />
         </section>
         <section id="projects">
           <ProjectsPage />

@@ -1,6 +1,6 @@
 "use client";
 
-import { Home, Star, Target, User } from "lucide-react";
+import { Book, Home, Star, Target, User } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -27,6 +27,7 @@ export function NavigationIcons({ isDark = false }: NavigationIconsProps) {
     { icon: Home, href: "#home", label: "Home" },
     { icon: User, href: "#about", label: "About" },
     { icon: Star, href: "#experiences", label: "Experiences" },
+    { icon: Book, href: "#education", label: "Education" },
     { icon: Target, href: "#projects", label: "Projects" },
     // You can add more page routes for other sections if needed
   ];
