@@ -14,7 +14,7 @@ export default function AboutPage() {
               About Me
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              A passionate creative designer and developer dedicated to crafting
+              passionate creative designer and developer dedicated to crafting
               innovative solutions and exceptional digital experiences through
               modern technologies.
             </p>
@@ -26,7 +26,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-black">My Story</h2>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  Driven by curiosity and a love for design, I create simple,
+                  A Driven by curiosity and a love for design, I create simple,
                   functional, and visually striking digital experiences. As a
                   student, I'm always learning and exploring new ideas that push
                   the boundaries of what's possible in the digital realm.

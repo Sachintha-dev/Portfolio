@@ -5,12 +5,8 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gray-100">
       <main>
-        <section id="home">
-          <Hero />
-        </section>
-        <section id="about">
-          <AboutSection />
-        </section>
+        <Hero />
+        <AboutSection />
       </main>
     </div>
   );

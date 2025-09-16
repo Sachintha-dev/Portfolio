@@ -1,4 +1,5 @@
-import { LeftSidebar } from "@/components/left-sidebar";
+import { RightSidebar } from "@/components/left-sidebar";
+import SocialMediaMenu from "@/components/social-media-menu";
 import { Analytics } from "@vercel/analytics/next";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
@@ -17,8 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <LeftSidebar />
+        <RightSidebar />
         {children}
+        <SocialMediaMenu />
         <Analytics />
       </body>
     </html>

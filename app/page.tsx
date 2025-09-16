@@ -8,10 +8,10 @@ import SkillsPage from "./skills/page";
 export default function HomePage() {
   return (
     <div className="min-h-screen">
-      {/* Fixed Left Sidebar */}
-      {/* <LeftSidebar /> */}
       <main className="min-h-screen bg-gray-100">
-        <HomePageContent />
+        <section id="home">
+          <HomePageContent />
+        </section>
         <section id="about">
           <AboutPage />
         </section>

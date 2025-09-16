@@ -18,14 +18,14 @@ export function NavigationIcons({ isDark = false }: NavigationIconsProps) {
     const targetId = href.replace("#", "");
     const target = document.getElementById(targetId);
     if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "end" });
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
   const pathname = usePathname();
 
   const navItems = [
-    { icon: Home, href: "/#", label: "Home" },
-    { icon: User, href: "/#about", label: "About" },
+    { icon: Home, href: "#home", label: "Home" },
+    { icon: User, href: "#about", label: "About" },
     { icon: Target, href: "#projects", label: "Projects" },
     { icon: Star, href: "#skills", label: "Skills" },
     // You can add more page routes for other sections if needed
