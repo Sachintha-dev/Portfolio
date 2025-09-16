@@ -26,8 +26,8 @@ export function NavigationIcons({ isDark = false }: NavigationIconsProps) {
   const navItems = [
     { icon: Home, href: "#home", label: "Home" },
     { icon: User, href: "#about", label: "About" },
+    { icon: Star, href: "#experiences", label: "Experiences" },
     { icon: Target, href: "#projects", label: "Projects" },
-    { icon: Star, href: "#skills", label: "Skills" },
     // You can add more page routes for other sections if needed
   ];
 
