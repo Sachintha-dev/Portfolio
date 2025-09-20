@@ -93,48 +93,50 @@ const skillCategories = [
 ];
 
 export const SkillsGrid = () => (
-  <main className="skills-page py-12 sm:py-20 px-4 sm:px-8 bg-gray-50">
+  <main className="skills-page px-4 sm:px-8 bg-gray-50">
     <div className="max-w-6xl mx-auto">
-      <h1 className="text-3xl sm:text-4xl font-bold text-black mb-8 sm:mb-12">
-        Skills
-      </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        {skillCategories.map((category, idx) => (
-          <div
-            key={idx}
-            className="p-4 sm:p-6 border border-gray-200 rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow duration-300"
-          >
-            <h2 className="text-lg sm:text-xl font-semibold text-black mb-3 sm:mb-4">
-              {category.title}
-            </h2>
-            <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4">
-              {category.description}
-            </p>
+      <div className="py-8 sm:py-12">
+        <h1 className="text-3xl sm:text-4xl font-bold text-black mb-8 sm:mb-12">
+          Skills
+        </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          {skillCategories.map((category, idx) => (
+            <div
+              key={idx}
+              className="p-4 sm:p-6 border border-gray-200 rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow duration-300"
+            >
+              <h2 className="text-lg sm:text-xl font-semibold text-black mb-3 sm:mb-4">
+                {category.title}
+              </h2>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4">
+                {category.description}
+              </p>
 
-            {category.icons && (
-              <div className="flex flex-wrap gap-2 mb-3">
-                {category.icons.map((icon, iconIndex) => (
-                  <span
-                    key={iconIndex}
-                    className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-gray-100 text-gray-700 rounded-full"
-                  >
-                    {icon}
-                  </span>
-                ))}
-              </div>
-            )}
+              {category.icons && (
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {category.icons.map((icon, iconIndex) => (
+                    <span
+                      key={iconIndex}
+                      className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-gray-100 text-gray-700 rounded-full"
+                    >
+                      {icon}
+                    </span>
+                  ))}
+                </div>
+              )}
 
-            {category.topics && (
-              <div className="space-y-1">
-                {category.topics.map((topic, topicIndex) => (
-                  <div key={topicIndex} className="text-sm text-gray-600">
-                    • {topic}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
+              {category.topics && (
+                <div className="space-y-1">
+                  {category.topics.map((topic, topicIndex) => (
+                    <div key={topicIndex} className="text-sm text-gray-600">
+                      • {topic}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </main>

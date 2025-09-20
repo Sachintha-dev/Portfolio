@@ -29,39 +29,41 @@ export function ProjectsShowcase() {
   ];
 
   return (
-    <section className="py-12 sm:py-20 px-4 sm:px-6 bg-white">
+    <section className="px-4 sm:px-6 bg-white">
       <div className="container mx-auto max-w-6xl">
-        <div className="mb-8 sm:mb-16">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4 sm:mb-8">
-            Welcome to my realm of wild projects and awesome creations
-          </h1>
-        </div>
+        <div className="py-8 sm:py-12">
+          <div className="mb-8 sm:mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4 sm:mb-8">
+              Welcome to my realm of wild projects and awesome creations
+            </h1>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-          {projects.map((project, index) => (
-            <div key={index} className="group cursor-pointer">
-              <div className="relative overflow-hidden rounded-2xl mb-3 sm:mb-4">
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-70`}
-                />
-                <Image
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  width={400}
-                  height={300}
-                  className="w-full h-48 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="flex items-start gap-2 sm:gap-3">
-                <div className="w-5 h-5 sm:w-6 sm:h-6 border border-gray-300 rounded-full flex items-center justify-center mt-1 flex-shrink-0 bg-gray-100">
-                  <span className="text-xs text-gray-700 font-medium">+</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            {projects.map((project, index) => (
+              <div key={index} className="group cursor-pointer">
+                <div className="relative overflow-hidden rounded-2xl mb-3 sm:mb-4">
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-70`}
+                  />
+                  <Image
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    width={400}
+                    height={300}
+                    className="w-full h-48 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-                <h3 className="text-base sm:text-lg font-medium text-black">
-                  {project.title}
-                </h3>
+                <div className="flex items-start gap-2 sm:gap-3">
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 border border-gray-300 rounded-full flex items-center justify-center mt-1 flex-shrink-0 bg-gray-100">
+                    <span className="text-xs text-gray-700 font-medium">+</span>
+                  </div>
+                  <h3 className="text-base sm:text-lg font-medium text-black">
+                    {project.title}
+                  </h3>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

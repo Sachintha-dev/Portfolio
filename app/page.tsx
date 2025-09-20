@@ -11,25 +11,25 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       <main className="min-h-screen bg-gray-100 pb-16 sm:pb-0">
-        <section id="home" className="mb-8 sm:mb-16">
+        <section id="home">
           <HeroAbout />
         </section>
-        <section id="about" className="py-8 sm:py-16">
+        <section id="about">
           <AboutPage />
         </section>
-        <section id="experiences" className="py-8 sm:py-16">
+        <section id="experiences">
           <Experience />
         </section>
-        <section id="education" className="py-8 sm:py-16">
+        <section id="education">
           <Education />
         </section>
-        <section id="projects" className="py-8 sm:py-16">
+        <section id="projects">
           <ProjectsShowcase />
         </section>
-        <section id="skills" className="py-8 sm:py-16">
+        <section id="skills">
           <SkillsGrid />
         </section>
-        <section id="contact" className="py-8 sm:py-16">
+        <section id="contact">
           <Contact />
         </section>
         <Footer />
