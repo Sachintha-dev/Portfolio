@@ -14,7 +14,7 @@ export function AboutSection() {
   };
 
   return (
-    <section id="about" className="py-12 sm:py-20 bg-gray-50">
+    <section id="about" className="py-12 sm:py-20 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-20 items-start">
           {/* Left Content */}
@@ -39,7 +39,7 @@ export function AboutSection() {
               aria-label="More about me"
             >
               More about me
-              <span className="w-6 h-6 border border-gray-400 rounded-full flex items-center justify-center text-xs bg-gray-50">
+              <span className="w-6 h-6 border border-gray-400 rounded-full flex items-center justify-center text-xs bg-gray-100">
                 ?
               </span>
             </a>
