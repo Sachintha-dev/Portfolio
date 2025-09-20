@@ -28,9 +28,9 @@ export function HeroAbout() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Hero Section */}
+      {/* Hero Section - Fixed 60vh for all screen sizes */}
       <section
-        className="h-[60vh] sm:h-[68vh] w-full flex flex-col justify-between relative"
+        className="h-[60vh] w-full flex flex-col justify-between relative"
         style={{ backgroundColor: "#a2a5a6" }}
       >
         <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
@@ -46,10 +46,10 @@ export function HeroAbout() {
           </div>
         </header>
 
-        <div className="absolute bottom-20 sm:bottom-32 left-0 right-0 z-40 pointer-events-none mb-8 sm:mb-12">
+        <div className="absolute bottom-16 sm:bottom-32 left-0 right-0 z-40 pointer-events-none">
           <div className="overflow-hidden whitespace-nowrap w-full">
             <h1
-              className={`text-3xl sm:text-6xl md:text-8xl font-bold leading-none inline-block text-white transition-all duration-1000 ${
+              className={`text-2xl sm:text-6xl md:text-8xl font-bold leading-none inline-block text-white transition-all duration-1000 ${
                 isLoaded
                   ? "animate-marquee"
                   : "transform translate-x-full opacity-0"
@@ -62,10 +62,10 @@ export function HeroAbout() {
           </div>
         </div>
 
-        <div className="relative mt-auto flex flex-col items-center h-full justify-end">
+        <div className="relative mt-auto flex flex-col items-center justify-end pb-0">
           {/* Portrait image at the very bottom */}
           <div className="relative z-10">
-            <div className="w-80 h-80 sm:w-120 sm:h-120 relative opacity-95">
+            <div className="w-48 h-48 sm:w-80 sm:h-80 md:w-120 md:h-120 relative opacity-95">
               <Image
                 src="/profile.png"
                 alt="Developer portrait"
@@ -94,37 +94,39 @@ export function HeroAbout() {
         `}</style>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="h-[40vh] sm:h-auto bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-0">
-          <div className="py-8 sm:py-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-20 items-start">
+      {/* About Section - Fixed 40vh for all screen sizes */}
+      <section id="about" className="h-[40vh] bg-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-0 h-full">
+          <div className="h-full flex items-center py-4 sm:py-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-20 items-center w-full">
               {/* Left Content */}
               <div className="text-left">
-                <h2 className="text-3xl sm:text-4xl md:text-3xl font-bold text-black leading-tight">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black leading-tight">
                   Driven by curiosity and a love for design, I create simple,
                   functional, and visually striking digital experiences. As a
                   student, I'm always learning and exploring new ideas.
                 </h2>
               </div>
               {/* Right Content */}
-              <div className="text-left md:text-right space-y-6 sm:space-y-8 pt-4 sm:pt-8">
-                <p className="text-sm sm:text-md text-gray-500 leading-relaxed max-w-full md:max-w-sm ml-0 md:ml-auto">
+              <div className="text-left md:text-right space-y-4 sm:space-y-6">
+                <p className="text-xs sm:text-sm md:text-md text-gray-500 leading-relaxed max-w-full md:max-w-sm ml-0 md:ml-auto">
                   The fusion of my passion for design, development, and seamless
                   user experiences places me at the intersection of creativity
                   and technology in the digital world.
                 </p>
-                <a
-                  href="#about"
-                  onClick={(e) => handleSmoothScroll(e, "#about")}
-                  className="inline-flex items-center gap-2 font-medium ml-0 md:ml-auto px-4 py-2 text-sm text-black transition-colors duration-200 hover:text-blue-500"
-                  aria-label="More about me"
-                >
-                  More about me
-                  <span className="w-6 h-6 border border-gray-400 rounded-full flex items-center justify-center text-xs bg-gray-100">
-                    ?
-                  </span>
-                </a>
+                <div className="flex justify-start md:justify-end">
+                  <a
+                    href="#about"
+                    onClick={(e) => handleSmoothScroll(e, "#about")}
+                    className="inline-flex items-center gap-2 font-medium px-4 py-2 text-xs sm:text-sm text-black transition-colors duration-200 hover:text-blue-500"
+                    aria-label="More about me"
+                  >
+                    More about me
+                    <span className="w-5 h-5 sm:w-6 sm:h-6 border border-gray-400 rounded-full flex items-center justify-center text-xs bg-gray-100">
+                      ?
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

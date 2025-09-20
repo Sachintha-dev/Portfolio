@@ -8,7 +8,7 @@ export function Footer() {
               your friendly chaos creator
             </p>
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-none break-words">
-              Ashhhhhhhh
+              Sachintha
             </h2>
           </div>
           <div className="flex-shrink-0 self-end md:self-auto">
