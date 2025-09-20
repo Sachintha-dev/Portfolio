@@ -10,7 +10,8 @@ const nextConfig = {
     unoptimized: true,
   },
   output: "export",
-  basePath: process.env.NODE_ENV === "production" ? "/portfolio" : "",
+  basePath:
+    process.env.NODE_ENV === "production" ? "/Sachintha-dev-portfolio" : "",
   images: {
     unoptimized: true,
   },
