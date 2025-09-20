@@ -1,13 +1,11 @@
-import { AboutSection } from "@/components/sections/about-section";
-import { Hero } from "@/components/sections/hero";
+import { HeroAbout } from "@/components/sections/hero-about";
 
 // hero/page.tsx
 export default function HeroPage() {
   return (
     <div className="bg-gray-100">
       <main>
-        <Hero />
-        <AboutSection />
+        <HeroAbout />
       </main>
     </div>
   );
