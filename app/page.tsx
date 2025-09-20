@@ -1,4 +1,5 @@
 import { Footer } from "@/components/layout/footer";
+import { BlogsAndPublications } from "@/components/sections/blogs-publications";
 import { Contact } from "@/components/sections/contact";
 import Education from "@/components/sections/education";
 import Experience from "@/components/sections/experience";
@@ -28,6 +29,9 @@ export default function HomePage() {
         </section>
         <section id="skills">
           <SkillsGrid />
+        </section>
+        <section id="blogs">
+          <BlogsAndPublications />
         </section>
         <section id="contact">
           <Contact />

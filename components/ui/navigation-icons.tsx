@@ -2,6 +2,7 @@
 
 import {
   Book,
+  BookOpen,
   Home,
   Lightbulb,
   ListCheck,
@@ -38,6 +39,7 @@ export function NavigationIcons({ isDark = false }: NavigationIconsProps) {
     { icon: Book, href: "#education", label: "Education" },
     { icon: ListCheck, href: "#projects", label: "Projects" },
     { icon: Lightbulb, href: "#skills", label: "Skills" },
+    { icon: BookOpen, href: "#blogs", label: "Blogs" },
     { icon: PhoneCall, href: "#contact", label: "Contact" },
     // You can add more page routes for other sections if needed
   ];
