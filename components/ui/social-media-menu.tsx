@@ -7,9 +7,24 @@ import {
   MessageCircle,
   Send,
 } from "lucide-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const SocialMediaMenu: React.FC = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if device is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const socialLinks = [
     {
       icon: <Instagram size={20} />,
@@ -43,85 +58,72 @@ const SocialMediaMenu: React.FC = () => {
     },
   ];
 
+  const containerStyle = {
+    position: "fixed" as const,
+    right: "2rem",
+    bottom: "2rem",
+    display: "flex",
+    flexDirection: "column" as const,
+    alignItems: "center",
+    background: isExpanded
+      ? "#fff"
+      : "linear-gradient(138deg, rgba(3, 169, 244, 1) 15%, rgba(63, 180, 233, 1) 65%)",
+    borderRadius: "50px",
+    padding: isExpanded ? "1rem 0.7rem" : "0.7rem",
+    boxShadow: "0 0.5rem 1rem rgba(0, 0, 0, 0.1)",
+    zIndex: 1000,
+    cursor: "pointer",
+    transition: "all 0.3s ease",
+    overflow: "visible",
+    maxHeight: isExpanded ? "280px" : "50px",
+    maxWidth: isExpanded ? "auto" : "50px",
+  };
+
+  const mainIconStyle = {
+    display: "flex",
+    alignItems: "center",
+    color: isExpanded ? "rgb(3, 169, 244)" : "#fff",
+    transition: "color 0.3s ease",
+    minWidth: "20px",
+    minHeight: "40px",
+  };
+
+  const socialIconBaseStyle = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: "0.75rem",
+    padding: "0.5rem",
+    borderRadius: "50%",
+    background: "#f8f9fa",
+    opacity: isExpanded ? 1 : 0,
+    visibility: isExpanded ? ("visible" as const) : ("hidden" as const),
+    transform: isExpanded ? "translateY(0)" : "translateY(-20px)",
+    transition: "all 0.3s ease",
+    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+    minWidth: "32px",
+    height: "32px",
+  };
+
+  // Hide component entirely on mobile
+  if (isMobile) {
+    return null;
+  }
+
   return (
     <div
-      style={{
-        position: "fixed",
-        right: "2rem",
-        bottom: "2rem",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        background:
-          "linear-gradient(138deg, rgba(3, 169, 244, 1) 15%, rgba(63, 180, 233, 1) 65%)",
-        borderRadius: "50px",
-        padding: "0.7rem",
-        boxShadow: "0 0.5rem 1rem rgba(0, 0, 0, 0.1)",
-        zIndex: 1000,
-        cursor: "pointer",
-        transition: "all 0.3s ease",
-        overflow: "visible",
-        maxHeight: "50px",
-        maxWidth: "50px",
-      }}
+      style={containerStyle}
       className="social-menu-container"
       onMouseEnter={(e) => {
         const container = e.currentTarget;
-        container.style.maxHeight = "300px";
-        container.style.background = "#fff";
-        container.style.padding = "1rem 0.7rem";
-
-        // Show social icons
-        const socialIcons = container.querySelectorAll(".social-icon");
-        socialIcons.forEach((icon: any, index) => {
-          setTimeout(() => {
-            icon.style.opacity = "1";
-            icon.style.transform = "translateY(0)";
-            icon.style.visibility = "visible";
-          }, index * 50);
-        });
-
-        // Change main icon color
-        const mainIcon = container.querySelector(".main-icon");
-        if (mainIcon) {
-          (mainIcon as HTMLElement).style.color = "rgb(3, 169, 244)";
-        }
+        setIsExpanded(true);
       }}
       onMouseLeave={(e) => {
-        const container = e.currentTarget;
-        container.style.maxHeight = "60px";
-        container.style.maxWidth = "60px";
-        container.style.background =
-          "linear-gradient(138deg, rgba(3, 169, 244, 1) 15%, rgba(63, 180, 233, 1) 65%)";
-        container.style.padding = "0.7rem";
-
-        // Hide social icons
-        const socialIcons = container.querySelectorAll(".social-icon");
-        socialIcons.forEach((icon: any) => {
-          icon.style.opacity = "0";
-          icon.style.transform = "translateY(-20px)";
-          icon.style.visibility = "hidden";
-        });
-
-        // Reset main icon color
-        const mainIcon = container.querySelector(".main-icon");
-        if (mainIcon) {
-          (mainIcon as HTMLElement).style.color = "#fff";
-        }
+        setIsExpanded(false);
       }}
     >
       {/* Main Send Icon */}
-      <div
-        className="main-icon"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          color: "#fff",
-          transition: "color 3s ease",
-          minWidth: "20px",
-          minHeight: "40px",
-        }}
-      >
+      <div className="main-icon" style={mainIconStyle}>
         <Send size={20} />
       </div>
 
@@ -135,21 +137,9 @@ const SocialMediaMenu: React.FC = () => {
           aria-label={social.label}
           className="social-icon"
           style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            marginTop: "0.75rem",
-            padding: "0.5rem",
-            borderRadius: "50%",
-            background: "#f8f9fa",
+            ...socialIconBaseStyle,
             color: social.color,
-            opacity: 0,
-            visibility: "hidden",
-            transform: "translateY(-20px)",
-            transition: "all 0.3s ease",
-            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-            minWidth: "32px",
-            height: "32px",
+            transitionDelay: isExpanded ? `${index * 50}ms` : "0ms",
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.background = social.color;

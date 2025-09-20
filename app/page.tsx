@@ -10,7 +10,7 @@ import HeroPage from "./hero/page";
 export default function HomePage() {
   return (
     <div className="min-h-screen">
-      <main className="min-h-screen bg-gray-100">
+      <main className="min-h-screen bg-gray-100 pb-16 sm:pb-0">
         <section id="home">
           <HeroPage />
         </section>

@@ -43,44 +43,83 @@ export function NavigationIcons({ isDark = false }: NavigationIconsProps) {
   ];
 
   return (
-    <div className="flex flex-col items-center gap-1 bg-black/65 backdrop-blur-sm rounded-full px-1 sm:px-2 py-2 sm:py-4">
-      {navItems.map((item) => {
-        const Icon = item.icon;
-        return (
-          <div key={item.href} className="relative group">
-            {item.href.startsWith("#") ? (
-              <a
-                href={item.href}
-                className={`w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full transition-all duration-200 text-white/70 hover:text-white hover:bg-white/10`}
-                aria-label={item.label}
-                onClick={(e) => handleSmoothScroll(e, item.href)}
-              >
-                <Icon size={16} className="sm:w-5 sm:h-5" />
-              </a>
-            ) : (
-              <Link
-                href={item.href}
-                className={`w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full transition-all duration-200 ${
-                  pathname === item.href
-                    ? "bg-blue-400/20 text-blue-400"
-                    : "text-white/70 hover:text-white hover:bg-white/10"
-                }`}
-                aria-label={item.label}
-              >
-                <Icon size={16} className="sm:w-5 sm:h-5" />
-              </Link>
-            )}
-            {/* Hover Label - Right Side - Hidden on mobile */}
-            <div className="hidden sm:block absolute right-full mr-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-300 ease-out transform -translate-x-2 group-hover:translate-x-0">
-              <div className="bg-black/65 backdrop-blur-sm text-white text-sm px-3 py-1.5 rounded-lg whitespace-nowrap border border-white/10">
-                {item.label}
-                {/* Arrow pointing to icon */}
-                <div className="absolute left-full top-1/2 -translate-y-1/2 border-4 border-transparent border-l-black/90"></div>
+    <>
+      {/* Mobile Bottom Navigation */}
+      <div className="flex sm:hidden items-center w-full max-w-full overflow-hidden">
+        {navItems.map((item) => {
+          const Icon = item.icon;
+          return (
+            <div
+              key={item.href}
+              className="relative group flex-1 min-w-0 flex justify-center"
+            >
+              {item.href.startsWith("#") ? (
+                <a
+                  href={item.href}
+                  className="w-8 h-8 flex items-center justify-center rounded-full transition-all duration-200 text-white/70 hover:text-white hover:bg-white/10 flex-shrink-0"
+                  aria-label={item.label}
+                  onClick={(e) => handleSmoothScroll(e, item.href)}
+                >
+                  <Icon size={16} />
+                </a>
+              ) : (
+                <Link
+                  href={item.href}
+                  className={`w-8 h-8 flex items-center justify-center rounded-full transition-all duration-200 flex-shrink-0 ${
+                    pathname === item.href
+                      ? "bg-blue-400/20 text-blue-400"
+                      : "text-white/70 hover:text-white hover:bg-white/10"
+                  }`}
+                  aria-label={item.label}
+                >
+                  <Icon size={16} />
+                </Link>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Desktop Right Sidebar */}
+      <div className="hidden sm:flex flex-col items-center gap-1 bg-black/65 backdrop-blur-sm rounded-full px-2 py-4">
+        {navItems.map((item) => {
+          const Icon = item.icon;
+          return (
+            <div key={item.href} className="relative group">
+              {item.href.startsWith("#") ? (
+                <a
+                  href={item.href}
+                  className="w-10 h-10 flex items-center justify-center rounded-full transition-all duration-200 text-white/70 hover:text-white hover:bg-white/10"
+                  aria-label={item.label}
+                  onClick={(e) => handleSmoothScroll(e, item.href)}
+                >
+                  <Icon size={20} />
+                </a>
+              ) : (
+                <Link
+                  href={item.href}
+                  className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-200 ${
+                    pathname === item.href
+                      ? "bg-blue-400/20 text-blue-400"
+                      : "text-white/70 hover:text-white hover:bg-white/10"
+                  }`}
+                  aria-label={item.label}
+                >
+                  <Icon size={20} />
+                </Link>
+              )}
+              {/* Hover Label - Right Side - Desktop only */}
+              <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-300 ease-out transform -translate-x-2 group-hover:translate-x-0">
+                <div className="bg-black/65 backdrop-blur-sm text-white text-sm px-3 py-1.5 rounded-lg whitespace-nowrap border border-white/10">
+                  {item.label}
+                  {/* Arrow pointing to icon */}
+                  <div className="absolute left-full top-1/2 -translate-y-1/2 border-4 border-transparent border-l-black/90"></div>
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })}
-    </div>
+          );
+        })}
+      </div>
+    </>
   );
 }
