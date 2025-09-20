@@ -1,4 +1,4 @@
-import { SkillsGrid } from "@/components/skills-grid";
+import { SkillsGrid } from "@/components/sections/skills-grid";
 
 export default function Skills() {
   return (

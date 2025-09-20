@@ -1,8 +1,8 @@
-import { Contact } from "@/components/contact";
+import { Contact } from "@/components/sections/contact";
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className=" bg-gray-100">
       <Contact />
     </main>
   );

@@ -1,5 +1,5 @@
-import { RightSidebar } from "@/components/left-sidebar";
-import SocialMediaMenu from "@/components/social-media-menu";
+import { RightSidebar } from "@/components/layout/left-sidebar";
+import SocialMediaMenu from "@/components/ui/social-media-menu";
 import { Analytics } from "@vercel/analytics/next";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";

@@ -93,84 +93,49 @@ const skillCategories = [
 ];
 
 export const SkillsGrid = () => (
-  <main
-    className="skills-page"
-    style={{ padding: "2rem", maxWidth: "1200px", margin: "0 auto" }}
-  >
-    <h1>Skills</h1>
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-        gap: "1.5rem",
-        marginTop: "2rem",
-      }}
-    >
-      {skillCategories.map((category, idx) => (
-        <div
-          key={idx}
-          style={{
-            padding: "1.5rem",
-            border: "1px solid #eee",
-            borderRadius: "8px",
-            backgroundColor: "#ffffff",
-            boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)",
-            transition: "box-shadow 0.3s ease",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.15)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.boxShadow = "0 1px 3px rgba(0, 0, 0, 0.1)";
-          }}
-        >
-          <h2 style={{ margin: "0 0 0.75rem 0", fontSize: "1.25rem" }}>
-            {category.title}
-          </h2>
-          <p style={{ margin: "0 0 1rem 0", color: "#555", lineHeight: "1.5" }}>
-            {category.description}
-          </p>
+  <main className="skills-page py-12 sm:py-20 px-4 sm:px-8 bg-gray-50">
+    <div className="max-w-6xl mx-auto">
+      <h1 className="text-3xl sm:text-4xl font-bold text-black mb-8 sm:mb-12">
+        Skills
+      </h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        {skillCategories.map((category, idx) => (
+          <div
+            key={idx}
+            className="p-4 sm:p-6 border border-gray-200 rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow duration-300"
+          >
+            <h2 className="text-lg sm:text-xl font-semibold text-black mb-3 sm:mb-4">
+              {category.title}
+            </h2>
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4">
+              {category.description}
+            </p>
 
-          {category.icons && (
-            <div style={{ margin: "0 0 0.5rem 0" }}>
-              {category.icons.map((icon, iconIndex) => (
-                <span
-                  key={iconIndex}
-                  style={{
-                    display: "inline-block",
-                    padding: "0.25rem 0.75rem",
-                    backgroundColor: "#f5f5f5",
-                    color: "#333",
-                    fontSize: "0.875rem",
-                    borderRadius: "1rem",
-                    marginRight: "0.5rem",
-                    marginBottom: "0.25rem",
-                  }}
-                >
-                  {icon}
-                </span>
-              ))}
-            </div>
-          )}
+            {category.icons && (
+              <div className="flex flex-wrap gap-2 mb-3">
+                {category.icons.map((icon, iconIndex) => (
+                  <span
+                    key={iconIndex}
+                    className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-gray-100 text-gray-700 rounded-full"
+                  >
+                    {icon}
+                  </span>
+                ))}
+              </div>
+            )}
 
-          {category.topics && (
-            <div>
-              {category.topics.map((topic, topicIndex) => (
-                <div
-                  key={topicIndex}
-                  style={{
-                    color: "#555",
-                    fontSize: "0.875rem",
-                    marginBottom: "0.25rem",
-                  }}
-                >
-                  • {topic}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      ))}
+            {category.topics && (
+              <div className="space-y-1">
+                {category.topics.map((topic, topicIndex) => (
+                  <div key={topicIndex} className="text-sm text-gray-600">
+                    • {topic}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   </main>
 );

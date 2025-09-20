@@ -1,21 +1,19 @@
-import { Footer } from "@/components/footer";
-import AboutPage from "./about/page";
-import ContactPage from "./contact/page";
-import Education from "./education/education";
-import Experience from "./experience/experience";
-import HomePageContent from "./home/page";
-import ProjectsPage from "./projects/page";
-import SkillsPage from "./skills/page";
+import { Footer } from "@/components/layout/footer";
+import { AboutSection } from "@/components/sections/about-section";
+import { Contact } from "@/components/sections/contact";
+import Education from "@/components/sections/education";
+import Experience from "@/components/sections/experience";
+import { Hero } from "@/components/sections/hero";
+import { ProjectsShowcase } from "@/components/sections/projects-showcase";
+import { SkillsGrid } from "@/components/sections/skills-grid";
 
 export default function HomePage() {
   return (
     <div className="min-h-screen">
       <main className="min-h-screen bg-gray-100">
         <section id="home">
-          <HomePageContent />
-        </section>
-        <section id="about">
-          <AboutPage />
+          <Hero />
+          <AboutSection />
         </section>
         <section id="experiences">
           <Experience />
@@ -24,13 +22,13 @@ export default function HomePage() {
           <Education />
         </section>
         <section id="projects">
-          <ProjectsPage />
+          <ProjectsShowcase />
         </section>
         <section id="skills">
-          <SkillsPage />
+          <SkillsGrid />
         </section>
         <section id="contact">
-          <ContactPage />
+          <Contact />
         </section>
         <Footer />
       </main>
