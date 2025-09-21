@@ -39,7 +39,7 @@ const Experience = () => (
                 {/* Timeline dot */}
                 <div className="absolute -left-1 sm:-left-4 top-1 w-3 h-3 sm:w-4 sm:h-4 bg-gray-500 rounded-full border-2 border-white shadow-sm" />
 
-                <h2 className="text-lg sm:text-xl font-semibold text-black mb-1">
+                <h2 className="text-lg sm:text-xl  font-semibold text-black mb-1">
                   {exp.role}{" "}
                   <span className="text-gray-500 font-normal text-base sm:text-lg">
                     @ {exp.company}
