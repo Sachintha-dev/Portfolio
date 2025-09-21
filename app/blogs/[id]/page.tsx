@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -102,6 +101,13 @@ interface BlogPostPageProps {
   params: {
     id: string;
   };
+}
+
+// Generate static params for all blog posts
+export async function generateStaticParams() {
+  return blogPosts.map((post) => ({
+    id: post.id,
+  }));
 }
 
 export default function BlogPostPage({ params }: BlogPostPageProps) {
@@ -217,7 +223,9 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   <a
                     href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
                       post.title
-                    )}&url=${encodeURIComponent(window.location.href)}`}
+                    )}&url=${encodeURIComponent(
+                      `https://sachintha-dev.github.io/Sachintha-dev-portfolio/blogs/${post.id}`
+                    )}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
@@ -233,7 +241,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   </a>
                   <a
                     href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-                      window.location.href
+                      `https://sachintha-dev.github.io/Sachintha-dev-portfolio/blogs/${post.id}`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
