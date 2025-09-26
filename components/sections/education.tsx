@@ -23,7 +23,7 @@ const Education = () => (
         </h1>
         <div className="relative pl-4 sm:pl-8">
           {/* Vertical timeline line */}
-          <div className="absolute left-2 sm:left-4 top-4 bottom-0 w-0.5 bg-gray-300" />
+          <div className="absolute  left-2 sm:left-4 top-4 bottom-0 w-0.5 bg-gray-300" />
 
           <ul className="space-y-6 sm:space-y-8">
             {educationData.map((edu, idx) => (
@@ -32,7 +32,7 @@ const Education = () => (
                 className="relative pb-4 sm:pb-6 border-b border-gray-100"
               >
                 {/* Timeline dot */}
-                <div className="absolute -left-3 sm:-left-4 top-1 w-3 h-3 sm:w-4 sm:h-4 bg-gray-500 rounded-full border-2 border-white shadow-sm" />
+                <div className="absolute -left-3.25 sm:-left-4 top-1 w-3 h-3 sm:w-4 sm:h-4 bg-gray-500 rounded-full border-2 border-white shadow-sm" />
 
                 <h2 className="text-lg sm:text-xl font-semibold text-black mb-2">
                   {edu.institution}
