@@ -34,7 +34,7 @@ export function HeroAbout() {
         style={{ backgroundColor: "#a2a5a6" }}
       >
         <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
-          <div className="container mx-auto px-4 sm:px-0 py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0">
+          <div className="container  mx-auto px-4 sm:px-0 py-4 flex flex-col  sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0">
             <div className="text-xs sm:text-sm text-white">
               © Code by Sachiya
             </div>
@@ -97,7 +97,7 @@ export function HeroAbout() {
       {/* About Section - Fixed 40vh for all screen sizes */}
       <section id="about" className="h-[40vh] bg-gray-100">
         <div className="container mx-auto px-4 sm:px-0 h-full">
-          <div className="h-full flex items-center pt-0 -mt-5 sm:pt-16">
+          <div className="h-full flex items-center pt-0 -mt-9 sm:pt-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-20 items-center w-full">
               {/* Left Content */}
               <div className="text-left">
