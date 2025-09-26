@@ -42,7 +42,7 @@ const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     category: "Web Development",
     tags: ["Next.js", "React", "Web Development", "JavaScript"],
-    image: "/tech-learning-platform-landing-page-with-gradient-.jpg",
+    image: "/images/tech-learning-platform-landing-page-with-gradient-.jpg",
     featured: true,
   },
   {
@@ -56,7 +56,7 @@ const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     category: "AI & Technology",
     tags: ["AI", "Machine Learning", "Web Development", "Future Tech"],
-    image: "/ai-chat-interface-dark-theme-with-spiral-logo.jpg",
+    image: "/images/ai-chat-interface-dark-theme-with-spiral-logo.jpg",
     featured: true,
   },
   {
@@ -70,7 +70,7 @@ const blogPosts: BlogPost[] = [
     readTime: "10 min read",
     category: "Design",
     tags: ["Design Systems", "UI/UX", "Figma", "Design"],
-    image: "/chat-application-interface-with-rainbow-background.jpg",
+    image: "/images/chat-application-interface-with-rainbow-background.jpg",
     featured: false,
   },
 ];

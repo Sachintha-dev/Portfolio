@@ -6,25 +6,25 @@ export function ProjectsShowcase() {
     {
       title: "Learnlogicify Landing Page",
       description: "Accelerate the Tech Career and build your Future Faster",
-      image: "/tech-learning-platform-landing-page-with-gradient-.jpg",
+      image: "/images/tech-learning-platform-landing-page-with-gradient-.jpg",
       gradient: "from-purple-400 to-pink-400",
     },
     {
       title: "Winzee Web Chat application",
       description: "Real-time chat application with modern UI",
-      image: "/chat-application-interface-with-rainbow-background.jpg",
+      image: "/images/chat-application-interface-with-rainbow-background.jpg",
       gradient: "from-blue-400 to-purple-400",
     },
     {
       title: "ChatGPT clone",
       description: "AI-powered chat interface",
-      image: "/ai-chat-interface-dark-theme-with-spiral-logo.jpg",
+      image: "/images/ai-chat-interface-dark-theme-with-spiral-logo.jpg",
       gradient: "from-gray-900 to-black",
     },
     {
       title: "Gemini Clone",
       description: "Google Gemini AI interface recreation",
-      image: "/gemini-ai-interface-with-flowing-lines-and-dark-ba.jpg",
+      image: "/images/gemini-ai-interface-with-flowing-lines-and-dark-ba.jpg",
       gradient: "from-blue-900 to-black",
     },
   ];
@@ -46,7 +46,7 @@ export function ProjectsShowcase() {
                     className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-70`}
                   />
                   <Image
-                    src={project.image || "/placeholder.svg"}
+                    src={project.image || "/images/placeholder.svg"}
                     alt={project.title}
                     width={400}
                     height={300}
