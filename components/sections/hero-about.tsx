@@ -9,7 +9,7 @@ export function HeroAbout() {
     // Start the animation after component mounts
     const timer = setTimeout(() => {
       setIsLoaded(true);
-    }, 10); // Small delay to ensure smooth start
+    }, 5); // Small delay to ensure smooth start
 
     return () => clearTimeout(timer);
   }, []);
@@ -30,7 +30,7 @@ export function HeroAbout() {
     <div className="min-h-screen bg-gray-100">
       {/* Hero Section - Fixed 60vh for all screen sizes */}
       <section
-        className="h-[50vh] w-full flex flex-col justify-between relative"
+        className="h-[60vh] w-full flex flex-col justify-between relative"
         style={{ backgroundColor: "#a2a5a6" }}
       >
         <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
@@ -94,10 +94,10 @@ export function HeroAbout() {
         `}</style>
       </section>
 
-      {/* About Section - Fixed 50vh for all screen sizes */}
-      <section id="about" className="h-[50vh] bg-gray-100">
+      {/* About Section - Fixed 0vh for all screen sizes */}
+      <section id="about" className="h-[40vh] bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-0 h-full">
-          <div className="h-full flex items-center py-4 sm:py-8">
+          <div className="h-full flex items-center pt-0 -mt-5  sm:pt-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-20 items-center w-full">
               {/* Left Content */}
               <div className="text-left">
