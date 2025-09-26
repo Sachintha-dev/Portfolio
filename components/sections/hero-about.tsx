@@ -118,7 +118,7 @@ export function HeroAbout() {
                   <a
                     href="#about"
                     onClick={(e) => handleSmoothScroll(e, "#about")}
-                    className="inline-flex items-center gap-2 font-medium px-4 py-2 text-xs sm:text-sm text-black transition-colors duration-200 hover:text-blue-500"
+                    className="inline-flex items-center gap-2 font-medium -mt-3 text-xs sm:text-sm text-black transition-colors duration-200 hover:text-blue-500"
                     aria-label="More about me"
                   >
                     More about me
