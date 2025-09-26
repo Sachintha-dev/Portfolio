@@ -9,7 +9,7 @@ export function HeroAbout() {
     // Start the animation after component mounts
     const timer = setTimeout(() => {
       setIsLoaded(true);
-    }, 5); // Small delay to ensure smooth start
+    }, 100); // Small delay to ensure smooth start
 
     return () => clearTimeout(timer);
   }, []);
