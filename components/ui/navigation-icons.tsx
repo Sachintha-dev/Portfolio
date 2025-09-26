@@ -27,7 +27,13 @@ export function NavigationIcons({ isDark = false }: NavigationIconsProps) {
     const targetId = href.replace("#", "");
     const target = document.getElementById(targetId);
     if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      const rect = target.getBoundingClientRect();
+      const absoluteTop = rect.top + window.pageYOffset;
+      const offset = window.innerWidth < 640 ? 16 : 80; // small offset on mobile, larger on desktop
+      window.scrollTo({
+        top: Math.max(absoluteTop - offset, 0),
+        behavior: "smooth",
+      });
     }
   };
   const pathname = usePathname();
