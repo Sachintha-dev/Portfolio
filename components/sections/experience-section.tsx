@@ -1,4 +1,5 @@
 "use client";
+import { SectionHeader } from "./SectionHeader";
 
 interface ExperienceItem {
   company: string;
@@ -35,7 +36,7 @@ export function ExperienceSection() {
   return (
     <section id="experiences" className="py-20 bg-white">
       <div className="max-w-3xl mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-10 text-gray-900">Experience</h2>
+        <SectionHeader title="Experience" />
         <div className="relative pl-8">
           {/* Timeline vertical line */}
           <div className="absolute left-4 top-0 w-1 h-full bg-blue-100 rounded-full" />
@@ -43,8 +44,8 @@ export function ExperienceSection() {
             {experiences.map((exp, idx) => (
               <li key={idx} className="relative">
                 {/* Timeline dot */}
-                <span className="absolute left-0 top-2 w-6 h-6 bg-blue-500 rounded-full border-4 border-white shadow" />
-                <div className="bg-white rounded-lg shadow p-6">
+                <span className="absolute left-[calc(1rem+0.125rem)] -translate-x-1/2 top-2 w-6 h-6 bg-blue-500 rounded-full border-4 border-white shadow z-10" />
+                <div className="bg-white  rounded-lg shadow p-6">
                   <div className="flex items-center justify-between">
                     <h3 className="text-xl font-semibold text-blue-700">
                       {exp.role}

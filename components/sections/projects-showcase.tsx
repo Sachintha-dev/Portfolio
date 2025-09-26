@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SectionHeader } from "./SectionHeader";
 
 export function ProjectsShowcase() {
   const projects = [
@@ -32,11 +33,10 @@ export function ProjectsShowcase() {
     <section className="px-4 sm:px-6 bg-white">
       <div className="container mx-auto max-w-6xl">
         <div className="py-8 sm:py-12">
-          <div className="mb-8 sm:mb-16">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4 sm:mb-8">
-              Welcome to my realm of wild projects and awesome creations
-            </h1>
-          </div>
+          <SectionHeader
+            title="Projects"
+            subtitle="A curated selection of my recent work"
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {projects.map((project, index) => (

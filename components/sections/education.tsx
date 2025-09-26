@@ -14,13 +14,13 @@ const educationData = [
   },
 ];
 
+import { SectionHeader } from "./SectionHeader";
+
 const Education = () => (
   <main className="education-page px-4 sm:px-8 bg-white">
     <div className="max-w-4xl mx-auto">
       <div className="py-8 sm:py-12">
-        <h1 className="text-3xl sm:text-4xl font-bold text-black mb-8 sm:mb-12">
-          Education
-        </h1>
+        <SectionHeader title="Education" />
         <div className="relative pl-4 sm:pl-8">
           {/* Vertical timeline line */}
           <div className="absolute  left-2 sm:left-4 top-4 bottom-0 w-0.5 bg-gray-300" />

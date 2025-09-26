@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { SectionHeader } from "./SectionHeader";
 
 interface BlogPost {
   id: string;
@@ -114,15 +115,11 @@ export function BlogsAndPublications() {
     <section className="px-4 sm:px-6 bg-white">
       <div className="container mx-auto max-w-6xl">
         <div className="py-8 sm:py-12">
-          <div className="text-center mb-12">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4">
-              Blogs & Publications
-            </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Explore my thoughts on technology, development insights, and
-              research publications
-            </p>
-          </div>
+          <SectionHeader
+            title="Blogs & Publications"
+            subtitle="Explore my thoughts on technology, development insights, and research publications"
+            align="center"
+          />
 
           {/* Featured Content */}
           <div className="mb-16">

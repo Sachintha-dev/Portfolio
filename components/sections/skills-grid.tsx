@@ -92,13 +92,13 @@ const skillCategories = [
   },
 ];
 
+import { SectionHeader } from "./SectionHeader";
+
 export const SkillsGrid = () => (
   <main className="skills-page px-4 sm:px-8 bg-gray-50">
     <div className="max-w-6xl mx-auto">
       <div className="py-8 sm:py-12">
-        <h1 className="text-3xl sm:text-4xl font-bold text-black mb-8 sm:mb-12">
-          Skills
-        </h1>
+        <SectionHeader title="Skills" align="left" />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {skillCategories.map((category, idx) => (
             <div
