@@ -11,7 +11,7 @@ import AboutPage from "./about/page";
 export default function HomePage() {
   return (
     <div className="min-h-screen">
-      <main className="min-h-screen bg-gray-100 pb-16 sm:pb-0">
+      <main className="min-h-screen bg-gray-100 pb-0">
         <section id="home">
           <HeroAbout />
         </section>
