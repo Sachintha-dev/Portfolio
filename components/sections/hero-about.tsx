@@ -94,8 +94,8 @@ export function HeroAbout() {
         `}</style>
       </section>
 
-      {/* About Section - Fixed 40vh for all screen sizes */}
-      <section id="about" className="h-[40vh] bg-gray-100">
+      {/* About teaser section (distinct id to avoid clashing with main #about) */}
+      <section id="about-hero" className="h-[40vh] bg-gray-100">
         <div className="container mx-auto px-4 sm:px-0 h-full">
           <div className="h-full flex items-center pt-0 -mt-9 sm:pt-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-20 items-center w-full">
