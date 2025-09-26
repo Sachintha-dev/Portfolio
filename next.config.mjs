@@ -6,12 +6,10 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  images: {
-    unoptimized: true,
-  },
   output: "export",
-  basePath:
-    process.env.NODE_ENV === "production" ? "/Sachintha-dev-portfolio" : "",
+  basePath: process.env.NODE_ENV === "production" ? "/Portfolio" : "",
+  assetPrefix:
+    process.env.NODE_ENV === "production" ? "/Portfolio/" : undefined,
   images: {
     unoptimized: true,
   },
