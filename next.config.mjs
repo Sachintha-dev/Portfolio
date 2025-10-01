@@ -6,13 +6,12 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  images: {
-    unoptimized: true,
-  },
   output: "export",
-  basePath:
-    process.env.NODE_ENV === "production" ? "/Sachintha-dev-portfolio" : "",
+  // Ensure static export works under a repository subpath like /Portfolio
+  basePath: process.env.NODE_ENV === "production" ? "/Portfolio" : "",
+  trailingSlash: true,
   images: {
+    // Using next/image with static export
     unoptimized: true,
   },
 };

@@ -2,6 +2,9 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+// Next.js will prefix with basePath automatically in production
+const basePath = "";
+
 export function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -51,7 +54,7 @@ export function Hero() {
         <div className="relative z-10">
           <div className="w-80 h-80 sm:w-120 sm:h-120 relative opacity-95">
             <Image
-              src="/profile.png"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/profile.png`}
               alt="Developer portrait"
               fill
               className="object-cover grayscale"
