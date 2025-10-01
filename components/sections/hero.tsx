@@ -54,7 +54,7 @@ export function Hero() {
         <div className="relative z-10">
           <div className="w-80 h-80 sm:w-120 sm:h-120 relative opacity-95">
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/profile.png`}
+              src={`${basePath}/images/profile.png`}
               alt="Developer portrait"
               fill
               className="object-cover grayscale"

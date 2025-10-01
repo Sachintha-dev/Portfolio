@@ -42,7 +42,7 @@ const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     category: "Web Development",
     tags: ["Next.js", "React", "Web Development", "JavaScript"],
-    image: "/tech-learning-platform-landing-page-with-gradient-.jpg",
+    image: "/images/tech-learning-platform-landing-page-with-gradient-.jpg",
     featured: true,
   },
   {
@@ -56,7 +56,7 @@ const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     category: "AI & Technology",
     tags: ["AI", "Machine Learning", "Web Development", "Future Tech"],
-    image: "/ai-chat-interface-dark-theme-with-spiral-logo.jpg",
+    image: "/images/ai-chat-interface-dark-theme-with-spiral-logo.jpg",
     featured: true,
   },
   {
@@ -70,7 +70,7 @@ const blogPosts: BlogPost[] = [
     readTime: "10 min read",
     category: "Design",
     tags: ["Design Systems", "UI/UX", "Figma", "Design"],
-    image: "/chat-application-interface-with-rainbow-background.jpg",
+    image: "/images/chat-application-interface-with-rainbow-background.jpg",
     featured: false,
   },
 ];
@@ -87,7 +87,7 @@ const publications: Publication[] = [
     abstract:
       "This paper presents a comprehensive analysis of performance optimization techniques in React applications, focusing on bundle size reduction, code splitting, and rendering optimization.",
     keywords: ["React", "Performance", "Optimization", "Web Development"],
-    pdfUrl: "/publications/react-performance-study.pdf",
+    pdfUrl: "/images/publications/react-performance-study.pdf",
     featured: true,
   },
   {
@@ -105,7 +105,7 @@ const publications: Publication[] = [
       "AI Integration",
       "User Experience",
     ],
-    pdfUrl: "/publications/ml-web-apps.pdf",
+    pdfUrl: "/images/publications/ml-web-apps.pdf",
     featured: true,
   },
 ];
@@ -138,9 +138,7 @@ export function BlogsAndPublications() {
                   >
                     <div className="relative h-48 sm:h-64">
                       <Image
-                        src={`${
-                          process.env.NEXT_PUBLIC_BASE_PATH || ""
-                        }post.image`}
+                        src={post.image}
                         alt={post.title}
                         fill
                         className="object-cover"
