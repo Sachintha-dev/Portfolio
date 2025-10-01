@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 // Next.js will prefix with basePath automatically in production
 const basePath = "";
+console.log(basePath);
 
 export function HeroAbout() {
   const [isLoaded, setIsLoaded] = useState(false);
