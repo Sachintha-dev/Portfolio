@@ -55,6 +55,8 @@ export default function AboutPage() {
                     alt="Profile picture"
                     width={300}
                     height={300}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 80vw, 300px"
                     className="w-full h-full max-w-xs sm:max-w-sm object-cover rounded-2xl"
                   />
                 </div>

@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { withBasePath } from "@/lib/path";
 import { useEffect, useState } from "react";
+import { getBlurDataURL } from "@/lib/imagePlaceholders";
 
 export function HeroAbout() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -71,6 +72,10 @@ export function HeroAbout() {
                 src={withBasePath("/images/profile.png")}
                 alt="Developer portrait"
                 fill
+                sizes="(max-width: 640px) 12rem, (max-width: 768px) 20rem, 30rem"
+                priority
+                placeholder="blur"
+                blurDataURL={getBlurDataURL(256, 256)}
                 className="object-cover grayscale"
               />
             </div>
