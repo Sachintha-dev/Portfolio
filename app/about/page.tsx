@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBasePath } from "@/lib/path";
 
 export default function AboutPage() {
   return (
@@ -50,7 +51,7 @@ export default function AboutPage() {
               <div className="bg-gray-100 rounded-2xl aspect-square flex items-center justify-center order-1 md:order-2">
                 <div className="text-gray-400 text-center">
                   <Image
-                    src="/images/about-me.jpg"
+                    src={withBasePath("/images/about-me.jpg")}
                     alt="Profile picture"
                     width={300}
                     height={300}

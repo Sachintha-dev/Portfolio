@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { withBasePath } from "@/lib/path";
 import Link from "next/link";
 import { SectionHeader } from "./SectionHeader";
 
@@ -138,7 +139,7 @@ export function BlogsAndPublications() {
                   >
                     <div className="relative h-48 sm:h-64">
                       <Image
-                        src={post.image}
+                        src={withBasePath(post.image)}
                         alt={post.title}
                         fill
                         className="object-cover"
@@ -293,7 +294,7 @@ export function BlogsAndPublications() {
                 >
                   <div className="relative h-40 sm:h-48">
                     <Image
-                      src={post.image}
+                      src={withBasePath(post.image)}
                       alt={post.title}
                       fill
                       className="object-cover"

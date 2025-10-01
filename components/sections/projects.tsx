@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBasePath } from "@/lib/path";
 
 export function Projects() {
   const projects = [
@@ -51,7 +52,7 @@ export function Projects() {
                   className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-80`}
                 />
                 <Image
-                  src={project.image || "/images/placeholder.svg"}
+                  src={withBasePath(project.image || "/images/placeholder.svg")}
                   alt={project.title}
                   width={400}
                   height={300}

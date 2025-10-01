@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBasePath } from "@/lib/path";
 import { SectionHeader } from "./SectionHeader";
 
 export function ProjectsShowcase() {
@@ -46,7 +47,7 @@ export function ProjectsShowcase() {
                     className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-70`}
                   />
                   <Image
-                    src={project.image}
+                    src={withBasePath(project.image)}
                     alt={project.title}
                     width={400}
                     height={300}
