@@ -1,12 +1,11 @@
 "use client";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-export function HeroAbout() {
-  const router = useRouter();
-  const { basePath } = router;
+// Next.js will prefix with basePath automatically in production
+const basePath = "";
 
+export function HeroAbout() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
